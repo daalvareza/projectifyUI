@@ -25,7 +25,7 @@ describe('LoginService', () => {
   it('should perform a POST request on login', () => {
     service.login('test', 'test').subscribe();
 
-    const req = httpMock.expectOne('http://localhost:3000/user/login');
+    const req = httpMock.expectOne('https://projectify-api.herokuapp.com/user/login');
     expect(req.request.method).toEqual('POST');
     req.flush(null);
   });
@@ -33,7 +33,7 @@ describe('LoginService', () => {
   it('should perform a POST request on register', () => {
     service.register('test', 'test').subscribe();
 
-    const req = httpMock.expectOne('http://localhost:3000/user/create');
+    const req = httpMock.expectOne('https://projectify-api.herokuapp.com/user/create');
     expect(req.request.method).toEqual('POST');
     req.flush(null);
   });

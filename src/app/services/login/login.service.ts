@@ -6,8 +6,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class LoginService {
-  private loginUrl = 'http://localhost:3000/user/login';
-  private registerUrl = 'http://localhost:3000/user/create';
+  private loginUrl = 'https://projectify-api.herokuapp.com/user/login';
+  private registerUrl = 'https://projectify-api.herokuapp.com/user/create';
 
   constructor(private http: HttpClient) { }
 

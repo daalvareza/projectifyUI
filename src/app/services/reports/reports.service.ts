@@ -10,7 +10,7 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class ReportService {
-  private API_URL = 'http://localhost:3000/reports';
+  private API_URL = 'https://projectify-api.herokuapp.com/reports';
 
   constructor(private http: HttpClient) {}
 

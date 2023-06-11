@@ -7,7 +7,7 @@ import { map } from 'rxjs';
   providedIn: 'root'
 })
 export class ProjectService {
-  private projectsUrl = 'http://localhost:3000/projects/all'; // URL to web api
+  private projectsUrl = 'https://projectify-api.herokuapp.com/projects/all'; // URL to web api
 
   constructor(private http: HttpClient) { }
 

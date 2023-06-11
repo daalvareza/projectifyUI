@@ -25,7 +25,7 @@ describe('ProjectsService', () => {
   it('should perform a GET request on getProjects', () => {
     service.getProjects().subscribe();
 
-    const req = httpMock.expectOne('http://localhost:3000/projects/all');
+    const req = httpMock.expectOne('https://projectify-api.herokuapp.com/projects/all');
     expect(req.request.method).toEqual('GET');
     req.flush([]);
   });
