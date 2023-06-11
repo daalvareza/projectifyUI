@@ -1,54 +1,49 @@
-:host {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-  }
-  
-  table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
-  th, td {
-    padding: 10px;
-    border: 1px solid #ddd;
-    text-align: left;
-  }
-  
-  th {
-    background-color: #4CAF50;
-    color: white;
-  }
-  
-  tr:nth-child(even) {
-    background-color: #f2f2f2;
-  }
-  
-  .editable {
-    background-color: #ffd700;
-  }
-  
-  input[type="number"] {
-    width: 50px;
-  }
-  
-  button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    border: none;
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #45a049;
-  }
+.reports-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+table {
+  min-width: 100%;
+  border-collapse: collapse;
+}
+
+thead {
+  font-size: .8rem;
+  text-transform: uppercase;
+  background: #f1f1f1;
+  color: #6d44b8;
+}
+
+th, td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  padding: 1.25rem 2rem;
+  width: 20%;
+  text-align: center;
+}
+
+tr {
+  background: #fff;
+}
+
+input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  display: inline-block;
+  margin: 4px 2px;
+}
+
+.message__error {
+  color: crimson;
+  font-size: 0.8em;
+}
   

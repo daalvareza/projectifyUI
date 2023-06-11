@@ -42,8 +42,9 @@ export class LoginComponent {
           this.router.navigate(['/projects']);
         },
         error: error => {
-          // If there's an error, log it to the console.
+          // If there's an error, show it.
           this.error = error.error.error;
+          this.message = "";
         }
       });
     }
@@ -56,10 +57,11 @@ export class LoginComponent {
       this.loginService.register(username, password).subscribe(
         response => {
           // Log the response on successful registration
-          this.message = "Registration successfull"
+          this.message = "Registration successfull";
+          this.error = "";
         },
         error => {
-          // If there's an error, log it to the console.
+          // If there's an error, show it.
           this.error = error.error.error;
         }
       );

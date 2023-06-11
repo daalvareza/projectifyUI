@@ -1,64 +1,76 @@
 .grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    padding: 20px;
-    background-color: #f5f5f5;
-  }
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20px;
+}
   
-  .card {
-    width: 300px;
-    margin: 10px;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: white;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .card h2 {
-    margin: 0;
-    cursor: pointer;
-  }
-  
-  .card p {
-    margin-bottom: 10px;
-  }
-  
-  .card form {
-    overflow: hidden;
-    max-height: 0;
-    opacity: 0;
-    transition: max-height 0.2s ease-out, opacity 0.2s 0.2s ease-out;
-  }
-  
-  .card form.active {
-    max-height: 200px; /* Ajusta este valor según el tamaño de tu formulario */
-    opacity: 1;
-    transition: max-height 0.2s ease-in, opacity 0.2s ease-in;
-  }
-  
-  .card form input,
-  .card form button {
-    width: 100%;
-    padding: 10px;
-    margin-top: 10px;
-    box-sizing: border-box;
-  }
-  
-  .card form button {
-    border: none;
-    border-radius: 5px;
-    background-color: #007bff;
-    color: white;
-  }
-  
-  .card form button:disabled {
-    background-color: #ccc;
-  }
-  
-  .card form .error-message {
-    color: red;
-    margin-bottom: 10px;
-  }
-  
+.card {
+  width: 300px;
+  margin: 10px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 5px 20px 50px #000;
+}
+
+.card h2 {
+  margin: 0;
+}
+
+.card p {
+  margin-bottom: 10px;
+}
+
+.card form {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.2s ease-out, opacity 0.2s 0.2s ease-out;
+}
+
+.card form.active {
+  max-height: 200px;
+  opacity: 1;
+  transition: max-height 0.2s ease-in, opacity 0.2s ease-in;
+}
+
+.card form input,
+.card form button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  box-sizing: border-box;
+}
+
+.card form button {
+  border: none;
+  border-radius: 5px;
+  background: #573b8a;
+  color: #fff;
+}
+
+.card form button:hover {
+  background: #6d44b8;
+}
+
+.card form button:disabled {
+  background-color: #ccc;
+}
+
+.card form .error-message {
+  color: red;
+  margin-bottom: 10px;
+}
+
+.report {
+  cursor: pointer;
+  font-weight: bold;
+  color: #573b8a;
+}
+
+.icon {
+  width: 1em;
+  height: 1em;
+}

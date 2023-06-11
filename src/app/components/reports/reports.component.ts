@@ -13,6 +13,8 @@ import { Observable, Subject, forkJoin, of, takeUntil, tap } from 'rxjs';
 export class ReportsComponent implements OnInit {
   reports: Report[] = [];
   editMode: { [key: string]: boolean } = {};
+  error: { [key: string]: boolean } = {};
+  message_error: String = "";
   private ngUnsubscribe = new Subject<void>();
 
   constructor(private reportService: ReportService, private projectService: ProjectService) { }
@@ -64,13 +66,16 @@ export class ReportsComponent implements OnInit {
   }
 
   updateReport(report: Report): void {
-    this.reportService.updateReport(report).subscribe(updatedReport => {
-      this.getReports();
-      this.toggleEditMode(report._id);
+    this.reportService.updateReport(report).subscribe({
+      next: (updatedReport) => {
+        this.getReports();
+        this.toggleEditMode(report._id);
+        this.error[report._id] = false;
+      },
+      error: (error: any) => {
+        this.error[report._id] = true;
+        this.message_error = error.error.error;
+      }
     });
   }
-}
-
-function tab(arg0: ([reports, projects]: [any, any]) => void): import("rxjs").OperatorFunction<[Report[], any], unknown> {
-  throw new Error('Function not implemented.');
 }

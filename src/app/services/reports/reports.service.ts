@@ -55,7 +55,6 @@ export class ReportService {
       'Content-Type': 'application/json',
       'Authorization': `Bearer ${this.token}`
     });
-    console.log(report);
     const reportReduced = {
       reportId: report._id,
       hours: report.hours 
