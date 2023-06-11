@@ -1,0 +1,22 @@
+.login-container {
+    width: 300px;
+    margin: 0 auto;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 10px;
+}
+
+input {
+    padding: 5px;
+}
+
+button {
+    padding: 5px;
+}
+  

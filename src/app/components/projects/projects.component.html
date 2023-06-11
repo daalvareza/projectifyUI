@@ -1,0 +1,18 @@
+<div class="grid">
+    <div class="card" *ngFor="let project of projects">
+      <h2 (click)="toggleForm(project._id)">{{ project.name }}</h2>
+      <p>{{ project.description }}</p>
+  
+      <form [formGroup]="forms[project._id]" [class.active]="selectedProject === project._id" (ngSubmit)="reportHours(project._id)">
+        <input formControlName="hours" type="number" min="0" max="45">
+        <div *ngIf="isHoursInvalid(project._id)">
+          <p *ngIf="isHoursRequired(project._id)">Hours is required.</p>
+          <p *ngIf="isHoursExceeded(project._id)">Maximum allowed hours is 45.</p>
+        </div>
+        <button type="submit" [disabled]="!forms[project._id].valid">Report Hours</button>
+      </form>
+  
+      <p *ngIf="error">{{ error }}</p>
+    </div>
+  </div>
+  

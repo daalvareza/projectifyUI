@@ -1,0 +1,29 @@
+<!-- reports.component.html -->
+<table>
+    <thead>
+      <tr>
+        <th>Project</th>
+        <th>Week</th>
+        <th>Hours</th>
+        <th>Year</th>
+        <th>Edit</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let report of reports">
+        <td>{{ report.projectName }}</td>
+        <td>{{ report.dateRange }}</td>
+        <td>
+          <span *ngIf="!editMode[report._id]">{{ report.hours }}</span>
+          <input *ngIf="editMode[report._id]" [(ngModel)]="report.hours" type="number">
+        </td>
+        <td>{{ report.year }}</td>
+        <td>
+          <button *ngIf="isEditable(report)" (click)="editMode[report._id] ? updateReport(report) : toggleEditMode(report._id)">
+            {{ editMode[report._id] ? 'Save' : 'Edit' }}
+        </button>
+        <span *ngIf="!isEditable(report)">Not Editable</span>
+    </td>
+    </tr>
+</tbody>
+</table>
